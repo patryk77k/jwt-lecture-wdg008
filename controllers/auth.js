@@ -37,7 +37,7 @@ const login = async (req, res) => {
       //wenn gehashtes Passwort + Passwort aus dem Formular übereinstimmen, dann Token generieren und verschicken
       //1. Token erstellen
       const token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET);
-      console.log(token);
+      console.log("token", token);
       return res.status(200).send(token);
     }
     return res.status(404).send("Invalid password!");

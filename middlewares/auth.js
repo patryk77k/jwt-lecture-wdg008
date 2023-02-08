@@ -18,7 +18,7 @@ const auth = async (req, res, next) => {
     //wenn verified = true:
     next();
   } catch (err) {
-    if (err.message === "invalid signature") {
+    if (err.message === "jwt malformed") {
       return res.status(404).send("no valid token");
     }
     console.log(err);
